@@ -24,13 +24,13 @@ public class UserController {
 
         User userone=new User(userId, "chayan","XXXXXXX",null,null);
         
-        Post postsData=restTemplate.getForObject("http://localhost:8084/post/1", Post.class) ;
+        Post postsData=restTemplate.getForObject("http://post-service/post/1", Post.class) ;
 
         userone.setPost(postsData);
 
-        Notification notifyData=restTemplate.getForObject("http://localhost:8085/notification/1", Notification.class) ;
+        Notification notifyData=restTemplate.getForObject("http://notification-service/notification/1", Notification.class) ;
         userone.setNotification(notifyData);
-        
+
         return userone;
     }
 }
